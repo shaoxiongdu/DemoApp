@@ -1,10 +1,11 @@
 package com.lixiang.demoapp.demo4;
 
-public class Photo {
+public class Item {
     private String title;
     private int res;
+    public boolean checked = false;
 
-    public Photo(String title, int res) {
+    public Item(String title, int res) {
         this.title = title;
         this.res = res;
     }

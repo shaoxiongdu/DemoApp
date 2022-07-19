@@ -1,6 +1,7 @@
 package com.lixiang.demoapp.demo4;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,24 +13,24 @@ import com.lixiang.demoapp.R;
 
 import java.util.List;
 
-public class PicAdapter extends BaseAdapter {
+public class ItemAdapter extends BaseAdapter {
 
-    private List<Photo> photoList;
-    private Context context;
+    private final List<Item> itemList;
+    private final Context context;
 
-    public PicAdapter(List<Photo> photoList, Context context) {
-        this.photoList = photoList;
+    public ItemAdapter(List<Item> itemList, Context context) {
+        this.itemList = itemList;
         this.context = context;
     }
 
     @Override
     public int getCount() {
-        return photoList.size();
+        return itemList.size();
     }
 
     @Override
     public Object getItem(int position) {
-        return photoList.get(position);
+        return itemList.get(position);
     }
 
     @Override
@@ -39,10 +40,15 @@ public class PicAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        Photo photo = photoList.get(position);
+        Item photo = itemList.get(position);
         View item = LayoutInflater.from(context).inflate(R.layout.demo4_item, parent, false);
         ((ImageView) item.findViewById(R.id.image)).setImageResource(photo.getRes());
         ((TextView) item.findViewById(R.id.title)).setText(photo.getTitle());
+        if (photo.checked) {
+            item.setBackgroundColor(Color.RED);
+        }else {
+            item.setBackgroundColor(Color.WHITE);
+        }
         return item;
     }
 }

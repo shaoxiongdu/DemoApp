@@ -10,66 +10,59 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="跳转到另一个Activity"
         android:onClick="toOtherActivity"
+        android:text="跳转到另一个Activity"
         android:textAllCaps="false" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="弹出Dialog"
         android:onClick="showDialog"
+        android:text="弹出Dialog"
         android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="显示图形"
-        android:onClick="showGraph"
-        android:textAllCaps="false" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="showImageList"
-        android:text="图片列表" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:onClick="changeColor"
-        android:layout_height="wrap_content"
-        android:text="改变颜色" />
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:orientation="horizontal"
         android:layout_height="wrap_content">
+
         <TextView
             android:layout_width="0dp"
-<<<<<<< HEAD
-            android:textSize="30sp"
-            android:text="dialog中的文本为"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
-=======
-            android:textSize="20sp"
-            android:text="输入的值:"
+            android:layout_height="wrap_content"
             android:layout_weight="2"
-            android:layout_height="wrap_content" />
->>>>>>> 122f98f (Initial commit)
+            android:text="输入的值:"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/dialogText"
             android:layout_width="0dp"
-<<<<<<< HEAD
-            android:layout_weight="3"
-=======
-            android:layout_weight="5"
->>>>>>> 122f98f (Initial commit)
-            android:textSize="30sp"
             android:layout_height="wrap_content"
-            android:text=""/>
+            android:layout_weight="3"
+            android:text=""
+            android:textSize="30sp" />
     </LinearLayout>
 
+    <Button
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toGraphActivity"
+        android:text="显示图形" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="toImageListActivity"
+        android:text="图片列表" />
+
+    <TextView
+        android:layout_margin="20dp"
+        android:textSize="30sp"
+        android:id="@+id/currentTheme"
+        android:gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="当前主题"/>
 
 
 </LinearLayout>

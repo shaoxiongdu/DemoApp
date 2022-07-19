@@ -1,56 +1,41 @@
 package com.lixiang.demoapp;
 
-<<<<<<< HEAD
-import androidx.appcompat.app.AppCompatActivity;
-
-=======
->>>>>>> 122f98f (Initial commit)
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-<<<<<<< HEAD
-
-import com.lixiang.demoapp.demo1.OtherActivity;
-import com.lixiang.demoapp.demo3.Demo3Activity;
-
-/**
- * 2.有outton,点击可弹出Dialog
- * a.Dialog内有edittext,可以输入文字，文字输入完成后会显示在activity内，且activity销毁后再次
- * 进入也要显示到activity内
- * b.Dialog有确定和取消button
- * <p>
- * 3.在activity内画一个显示一个圆角矩形，和三角形，颜色为红色填充黄色边框
- * <p>
- * 4.设置圆角矩形支持可按，按下时为黄色填充、红色边框
- * 5.有图片列表显示，可滚动，可长按后角标显示选中状态
-=======
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.lixiang.demoapp.demo1.Demo1Activity;
 import com.lixiang.demoapp.demo3.Demo3Activity;
 import com.lixiang.demoapp.demo4.Demo4Activity;
 
-/**
- * 5.
->>>>>>> 122f98f (Initial commit)
- * 6.监听主体改变后，将activity内字体改变颜色
- */
 public class MainActivity extends AppCompatActivity {
 
-    private TextView resText;
-    SharedPreferences sp;
+    private static SharedPreferences sp;
+    private static TextView resText;
+    private static TextView currentTheme;
+    private static final String SAVE_FILE_NAME = "input_data";
 
+    /**
+     * 初始化
+     */
     private void init() {
         resText = findViewById(R.id.dialogText);
-        sp = getSharedPreferences("inputData", Context.MODE_PRIVATE);
-        resText.setText(sp.getString("input",""));
+        sp = getSharedPreferences(SAVE_FILE_NAME, Context.MODE_PRIVATE);
+        currentTheme = findViewById(R.id.currentTheme);
+
+        // 读取历史记录
+        resText.setText(sp.getString("input", ""));
     }
 
     @Override
@@ -59,6 +44,29 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         init();
+    }
+
+    /**
+     * 监听配置文件改变
+     * @param newConfig
+     */
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
+        int currentNightMode = newConfig.uiMode & Configuration.UI_MODE_NIGHT_MASK;
+        switch (currentNightMode) {
+            case Configuration.UI_MODE_NIGHT_NO:
+                // 关闭
+                currentTheme.setText("当前主题:亮");
+                break;
+            case Configuration.UI_MODE_NIGHT_YES:
+                // 开启
+                currentTheme.setText("当前主题:黑");
+                currentTheme.setTextColor(Color.RED);
+                break;
+            default:
+                break;
+        }
     }
 
     /**
@@ -74,12 +82,6 @@ public class MainActivity extends AppCompatActivity {
 
         new AlertDialog.Builder(this)
                 .setView(inputEditText)
-<<<<<<< HEAD
-                .setPositiveButton("yes", (dialogInterface, i) -> {
-                    resText.setText(inputEditText.getText());
-                })
-                .setNegativeButton("no", (dialogInterface, i) -> {
-=======
                 .setTitle("输入框")
                 .setMessage("请在下方输入数据:")
                 .setPositiveButton("确定", (dialogInterface, i) -> {
@@ -88,56 +90,33 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .setNegativeButton("取消", (dialogInterface, i) -> {
                     Toast.makeText(this, "您取消了保存", Toast.LENGTH_SHORT).show();
->>>>>>> 122f98f (Initial commit)
                 })
                 .show();
     }
 
-    /**
-     * 显示一个圆角矩形，和三角形，颜色为红色填充黄色边框
-     *
-     * 设置圆角矩形支持可按，按下时为黄色填充、红色边框
-     *
-     * @param view
-     */
-    public void showGraph(View view) {
+
+    public void toGraphActivity(View view) {
         Intent intent = new Intent(this, Demo3Activity.class);
         startActivity(intent);
     }
 
-<<<<<<< HEAD
-    public void showImageList(View view) {
-=======
     /**
      * 有图片列表显示，可滚动，可长按后角标显示选中状态
      *
      * @param view
      */
-    public void showImageList(View view) {
+    public void toImageListActivity(View view) {
         Intent intent = new Intent(this, Demo4Activity.class);
         startActivity(intent);
->>>>>>> 122f98f (Initial commit)
     }
 
-    public void changeColor(View view) {
-    }
-
-<<<<<<< HEAD
-
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-=======
+    /**
+     * 暂停时 持久化输入
+     */
     @Override
     protected void onPause() {
         super.onPause();
->>>>>>> 122f98f (Initial commit)
-        saveDialogInput();
-    }
-
-    private void saveDialogInput(){
-        sp.edit().putString("input",resText.getText().toString()).commit();
+        sp.edit().putString("input", resText.getText().toString()).commit();
     }
 
     /**
@@ -146,11 +125,7 @@ public class MainActivity extends AppCompatActivity {
      * @param view
      */
     public void toOtherActivity(View view) {
-<<<<<<< HEAD
-        Intent intent = new Intent(this, OtherActivity.class);
-=======
         Intent intent = new Intent(this, Demo1Activity.class);
->>>>>>> 122f98f (Initial commit)
         startActivity(intent);
     }
 
