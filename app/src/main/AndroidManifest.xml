@@ -14,11 +14,22 @@
         android:theme="@style/Theme.DemoApp"
         tools:targetApi="31">
         <activity
+<<<<<<< HEAD
             android:name=".demo3.Demo3Activity"
             android:parentActivityName=".MainActivity"
             android:exported="false" />
         <activity
             android:name=".demo1.OtherActivity"
+=======
+            android:name=".demo4.Demo4Activity"
+            android:exported="false" />
+        <activity
+            android:name=".demo3.Demo3Activity"
+            android:exported="false"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".demo1.Demo1Activity"
+>>>>>>> 122f98f (Initial commit)
             android:exported="false"
             android:parentActivityName=".MainActivity" />
         <activity
