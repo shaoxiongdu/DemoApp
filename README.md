@@ -1,6 +1,14 @@
 # 模块说明
 
-## app小练习
+```bash
+.
+├── app 
+├── notice
+├── README.md
+```
+
+## - app: activity练习
+
 1. 有button,点击可跳转二级activity
 
 2. 有button,点击可弹出Dialog
@@ -15,4 +23,4 @@
 4. 有图片列表显示，可滚动，可长按后角标显示选中状态
 5. 监听主题改变后，将activity内字体改变颜色
 
-## notice：通知
+## - notice：通知练习
