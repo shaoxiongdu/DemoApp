@@ -1,18 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="50dp"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <Button
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:onClick="highNotice"
+        android:text="highNotice"
+        android:textAllCaps="false" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="defaultNotice"
+        android:text="defaultNotice"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:onClick="lowNotice"
+        android:text="lowNotice"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="minNotice"
+        android:text="minNotice"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="longTextAndClickable"
+        android:text="长文本和可单击的"
+        android:textAllCaps="false" />
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="progressBarNotice"
+        android:text="进度条通知"
+        android:textAllCaps="false" />
+
+</LinearLayout>
