@@ -35,6 +35,11 @@
 
 ### notice
 > 通知练习
+- 各种优先级通知
+- 带大文本通知
+- 点击跳转activity通知
 
 ### PermissionSystem
 > 权限系统
+- 网络权限
+- 定位权限
