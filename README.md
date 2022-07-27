@@ -2,7 +2,7 @@
 > [DemoApp飞书文档](https://li.feishu.cn/docx/doxcnYQ0XwLL2KAyy3LOcu0hd1c)
 ## 目录结构
 ```bash
-.
+. 
 ├── app                     // app练习
 ├── build.gradle  
 ├── gradle
