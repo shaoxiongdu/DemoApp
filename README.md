@@ -1,16 +1,24 @@
 # DemoApp
 > [DemoApp飞书文档](https://li.feishu.cn/docx/doxcnYQ0XwLL2KAyy3LOcu0hd1c)
-# 模块说明
-
+## 目录结构
 ```bash
 .
-├── app 
-├── notice
+├── app                     // app练习
+├── build.gradle  
+├── gradle
+├── gradle.properties
+├── gradlew
+├── gradlew.bat
+├── local.properties
+├── notice                  // 通知练习
+├── permissionsystem        // 权限练习
 ├── README.md
+└── settings.gradle
+
 ```
-
-## - app: activity练习
-
+## 模块说明
+### app
+> activity练习
 1. 有button,点击可跳转二级activity
 
 2. 有button,点击可弹出Dialog
@@ -25,5 +33,8 @@
 4. 有图片列表显示，可滚动，可长按后角标显示选中状态
 5. 监听主题改变后，将activity内字体改变颜色
 
-## - notice：通知练习
-## - PermissionSystem: 权限系统
+### notice
+> 通知练习
+
+### PermissionSystem
+> 权限系统
