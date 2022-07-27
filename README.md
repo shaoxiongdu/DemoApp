@@ -26,3 +26,4 @@
 5. 监听主题改变后，将activity内字体改变颜色
 
 ## - notice：通知练习
+## - PermissionSystem: 权限系统

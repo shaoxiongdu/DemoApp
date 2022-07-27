@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/notice" />
+            <option value="$PROJECT_DIR$/permissionsystem" />
           </set>
         </option>
       </GradleProjectSettings>
