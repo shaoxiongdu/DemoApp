@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/notice" />
             <option value="$PROJECT_DIR$/permissionsystem" />
+            <option value="$PROJECT_DIR$/recyclerview" />
           </set>
         </option>
       </GradleProjectSettings>

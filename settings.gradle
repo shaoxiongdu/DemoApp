@@ -16,3 +16,4 @@ rootProject.name = "DemoApp"
 include ':app'
 include ':notice'
 include ':permissionsystem'
+include ':recyclerview'

@@ -12,6 +12,7 @@
 ├── local.properties
 ├── notice                  // 通知练习
 ├── permissionsystem        // 权限练习
+├── recyclerview            // recyclerview
 ├── README.md
 └── settings.gradle
 
@@ -40,8 +41,13 @@
 - 点击跳转activity通知
 
 ### PermissionSystem
+
 > 权限系统
+
 - 网络权限
 - 定位权限
+- 拨号权限 ...
 
-...
+### recyclerview
+
+> 升级列表视图
