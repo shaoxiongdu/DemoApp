@@ -28,19 +28,30 @@ public class MainActivity extends AppCompatActivity {
 
     private static final String TAG = MainActivity.class.getName();
     public static final int REQUEST_LOCATION_CODE = 0x1;
+    public static final int REQUEST_RECORD_AUDIO_CODE = 0x2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadPosition();
+        loadMicrophone();
+    }
+
+    private void loadMicrophone() {
+        boolean permission = checkPermission(Manifest.permission.RECORD_AUDIO);
+        if (!permission) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{Manifest.permission.RECORD_AUDIO}, REQUEST_RECORD_AUDIO_CODE);
+            }
+        }
     }
 
     private void loadPosition() {
         boolean permission = checkPermission(Manifest.permission.ACCESS_COARSE_LOCATION);
-        if (!permission){
+        if (!permission) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
-                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION},REQUEST_LOCATION_CODE);
+                requestPermissions(new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, REQUEST_LOCATION_CODE);
             }
         }
     }
@@ -59,7 +70,14 @@ public class MainActivity extends AppCompatActivity {
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                     Toast.makeText(this, "已成功获取到定位权限", Toast.LENGTH_SHORT).show();
                 } else {
-                    Toast.makeText(this, "您拒绝了授权", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "您拒绝了定位授权", Toast.LENGTH_SHORT).show();
+                }
+                break;
+            case REQUEST_RECORD_AUDIO_CODE:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    Toast.makeText(this, "已成功获取到麦克风权限", Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, "您拒绝了麦克风授权", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
